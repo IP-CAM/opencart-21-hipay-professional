@@ -276,7 +276,7 @@ class Controllerpaymenthipaycc extends Controller {
         if ($this->session->data['payment_method']['code'] == 'hipaycc') {
             $this->load->language('payment/hipaycc'); // 
             $this->load->model('checkout/order');
-            $this->model_checkout_order->addOrderHistory($this->session->data['order_id'], $this->config->get('hipaycc_order_status_id'),$this->language->get('hipay_cancel'));                         
+            $this->model_checkout_order->addOrderHistory($this->session->data['order_id'], 7,$this->language->get('hipay_cancel'));                         
         }       
         $this->response->redirect($this->url->link('checkout/checkout'));
     }
